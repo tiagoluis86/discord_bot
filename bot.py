@@ -22,6 +22,6 @@ async def on_ready(): #once the Client has made the connection and prepared the 
 #client.run(TOKEN)
 
 try:
-    client.run('OTYwOTA4MjExNjk3OTAxNjQ4.YkxRgg.qDGWovGQzT8aVZHp7INCoK64sSY')
+    client.run('')
 except discord.errors.LoginFailure as e:
     print("Login unsuccessful.")

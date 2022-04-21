@@ -4,14 +4,15 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+GUILD = os.getenv('DISCORD_GUILD')
+
 client = discord.Client()
 
 @client.event
-async def on_ready(): #once the Client has made the connection and prepared the data
+async def on_ready():
     for guild in client.guilds:
-    if guild.name == GUILD:
-        break
-
+        if guild.name == GUILD:
+            break
 
     print(
         f'{client.user} is connected to the following guild:\n'
@@ -22,6 +23,6 @@ async def on_ready(): #once the Client has made the connection and prepared the 
 #client.run(TOKEN)
 
 try:
-    client.run('')
+    client.run(TOKEN)
 except discord.errors.LoginFailure as e:
     print("Login unsuccessful.")
